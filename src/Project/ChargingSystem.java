@@ -61,8 +61,6 @@ public class ChargingSystem {
     
 
 
- // ... (existing code)
-
     private static void chargeVehicles(int unit, ChargingStationDetails chargingStationDetails, AdminstratorDetails adminstratorDetails) {
         Random rand = new Random();
         StringBuilder hourlyOutput = new StringBuilder();
@@ -105,30 +103,28 @@ public class ChargingSystem {
         System.out.println("\n-------------------------------------------------------------\n");
     }
 
-    // ... (existing code)
-
-
-    private static void printReservations(AdminstratorDetails adminstratorDetails) {
-        System.out.println("Reservations:");
-        System.out.printf("%-6s", "Hour");
-
-        for (int unit = 0; unit < CHARGING_UNITS; unit++) {
-            System.out.printf("%-25s", "Unit " + unit);
-        }
-        System.out.println();
-
-        for (int hour = 0; hour < HOURS; hour++) {
-            System.out.printf("%-6d", hour);
-
+   private static void printReservations(AdminstratorDetails adminstratorDetails) {
+        synchronized(System.out) {
+            System.out.println("Reservations:");
+            System.out.printf("%-6s", "Hour");
+    
             for (int unit = 0; unit < CHARGING_UNITS; unit++) {
-                System.out.printf("%-25s", formatReservation(Prioritized_Queue[hour][unit]));
+                System.out.printf("%-25s", "Unit " + unit);
+            }
+            System.out.println();
+    
+            for (int hour = 0; hour < HOURS; hour++) {
+                System.out.printf("%-6d", hour);
+    
+                for (int unit = 0; unit < CHARGING_UNITS; unit++) {
+                    System.out.printf("%-25s", formatReservation(Prioritized_Queue[hour][unit]));
+                }
+                System.out.println();
             }
             System.out.println();
         }
-        System.out.println();
     }
 
-    // ... (existing code)
 
     private static String formatReservation(String reservation) {
         if (reservation.isEmpty()) {
