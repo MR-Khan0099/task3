@@ -1,20 +1,19 @@
-# 
-Charging System Project
+# Charging System Project
 This project is a Charging System implemented in Java, where users can reserve charging slots for their electric or solar-powered vehicles. The system includes features for logging and managing user details, administrator details, and charging station information.
 
-#Project Structure
+# Project Structure
 The project is organized into several classes and annotations:
 
 Main: The main class that orchestrates the charging system, reads user and administrator details, and simulates the charging process.
 
-##Annotations:
+## Annotations:
 
 User: An annotation for defining user details, including name, car type, energy type, car plate number, and time slot.
 Adminstrator: An annotation for defining administrator details, including name, age, and shift taken.
 Charging_Station_Info: An annotation for defining charging station details, including the station name and energy type.
 Classes:
 
-UserClass: Represents a class annotated with user details.
+# UserClass: Represents a class annotated with user details.
 AdminstratorClass: Represents a class annotated with administrator details.
 ChargingUnitClass: Represents a class annotated with charging station details.
 ChargingSystem: The core class handling the reservation system, processing day simulation, and charging unit management.
