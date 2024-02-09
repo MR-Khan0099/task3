@@ -6,11 +6,7 @@ The project is organized into several classes and annotations:
 
 Main: The main class that orchestrates the charging system, reads user and administrator details, and simulates the charging process.
 
-## Annotations:
 
-User: An annotation for defining user details, including name, car type, energy type, car plate number, and time slot.
-Adminstrator: An annotation for defining administrator details, including name, age, and shift taken.
-Charging_Station_Info: An annotation for defining charging station details, including the station name and energy type.
 Classes:
 
 # UserClass: Represents a class annotated with user details.
